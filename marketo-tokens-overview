@@ -1,6 +1,9 @@
 #Marketo tokens at-a-glance
 Resource Links: https://docs.marketo.com/display/public/DOCS/Tokens+Overview
 
+#Marketo Link to Person
+{{SP_Send_Alert_Info}}
+
 ##Marketo Person Tokens
 {{lead.Acquisition Date}}
 {{lead.Acquisition Program Name}}
