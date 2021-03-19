@@ -1,0 +1,10 @@
+# MARKETO REVENUE PICKLIST VALUES
+# Instructions: Copy + Paste values below into REVENUE picklist values for Marketo form fields
+
+$0-10 Million|$0-10 Million                     
+$10-50 Million|$10-50 Million
+$50-100 Million|$50-100 Million
+$100-250 Million|$100-250 Million
+$250-500 Million|$250-500 Million
+$500M-1 Billion|$500M-1 Billion
+> $1 Billion|> $1 Billion
