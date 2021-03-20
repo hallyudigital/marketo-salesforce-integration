@@ -1,0 +1,47 @@
+# Use the Email Script Token found at the program or folder-level in Marketing Activities
+# Logic is a big if-then statement to display dynamic content on emails
+# Bring tokens in from script panel and remove {} brackets from code
+# Be sure to check box of any field used in the token code (for access)
+
+
+# Link to References and Resources:
+https://developers.marketo.com/email-scripting/
+http://velocity.apache.org/tools/2.0/index.html
+https://nation.marketo.com/t5/Champion-Program-Blogs/Upping-your-Token-Game-Getting-Started-with-Velocity-Script/ba-p/302283
+
+
+# Primary Query Operators:
+#if – Starts an "If" statement. Works just like excel to check if a record matches your criteria.
+#elseif – Allows for multiple #if statements if the record does not qualify for your first set of criteria. 
+#if recordtype equals "1", do this thing -> #elseif recordtype equals "2", do this other thing, etc.
+#else as default choice for records that do not match any of your if statement criteria.
+#end to close the script.  If you forget #end, your email will likely fail to approve or send.
+
+
+# Logic Rules:
+# AND: &&
+# OR: ||
+# Equals: $lead.fieldName.equals("value")
+#Does Not Equal: !$lead.fieldName.equals("value")
+#Contains: $lead.FieldName.contains("value")
+#Check if the Field Is Empty: $lead.FieldName.isEmpty()
+#Check if the Field is Not Empty: !$lead.FieldName.isEmpty()
+# Set variables: #set($variablename = "value")
+
+
+# Sample Email Script for Salutation
+
+##check if the lead is male
+#if(${lead.MarketoSocialGender} == "Male")
+	##if the lead is male, use the salutation 'Mr.'
+	#set($greeting = "Dear Mr. ${lead.LastName},")
+##check is the lead is female
+#elseif(${lead.MarketoSocialGender} == "Female")
+	##if female, use the salutation 'Ms.'
+	#set($greeting = "Dear Ms. ${lead.LastName},")
+#else
+	##otherwise, use the first name
+	#set($greeting = "Dear ${lead.FirstName},")
+#end
+##print the greeting and some content
+${greeting}
